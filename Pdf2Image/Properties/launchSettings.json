@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Pdf2Image": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\p3973\\Desktop\\4L119-796AN.pdf C:\\Users\\p3973\\Desktop\\my.image.jpeg"
+    }
+  }
+}
