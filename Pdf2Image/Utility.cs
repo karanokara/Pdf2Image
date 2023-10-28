@@ -31,6 +31,11 @@ namespace Pdf2Image
 
             using (GhostscriptRasterizer rasterizer = new GhostscriptRasterizer())
             {
+                //rasterizer.CustomSwitches.Add("-dUseCropBox");
+                //rasterizer.CustomSwitches.Add("-c");
+                //rasterizer.CustomSwitches.Add("[/CropBox [24 72 559 794] /PAGES pdfmark");
+                //rasterizer.CustomSwitches.Add("-f");
+
                 //rasterizer.Open(pdfPath, gvi, false);
                 rasterizer.Open(pdfPath, library);
 
