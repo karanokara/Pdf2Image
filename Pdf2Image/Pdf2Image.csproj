@@ -1,29 +1,38 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-	
-	<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 
-  <ItemGroup>
-    <None Remove="Resource\gsdll64.dll" />
-  </ItemGroup>
+		<!-- extracts all files, including the managed assemblies, before running the executable. This may be helpful for rare application compatibility problems.-->
+		<IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
 
-  <ItemGroup>
-    <EmbeddedResource Include="Resource\gsdll64.dll">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
+		<PublishSingleFile>true</PublishSingleFile>
+		<SelfContained>true</SelfContained>
 
-  <ItemGroup>
-    <PackageReference Include="Ghostscript.NET" Version="1.2.3.1" />
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.3.0" />
-    <PackageReference Include="Magick.NET.Core" Version="13.3.0" />
-    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
-  </ItemGroup>
+		<!--put PDB file inside the assembly-->
+		<DebugType>embedded</DebugType>
+
+		<Title>Pdf2Image</Title>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resource\gsdll64.dll" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Resource\gsdll64.dll">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ghostscript.NET" Version="1.2.3.1" />
+		<PackageReference Include="Magick.NET-Q16-AnyCPU" Version="13.3.0" />
+		<PackageReference Include="Magick.NET.Core" Version="13.3.0" />
+		<PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+	</ItemGroup>
 
 </Project>
