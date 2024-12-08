@@ -14,7 +14,7 @@ List<MemoryStream> list = Pdf2Image.Utility.Pdf2Image(pathPDF, format);
 
 
 ```
-./Pdf2Image.exe C:\\Users\\p3973\\Desktop\\4L119-796AN.pdf .\\test.jpeg
+./Pdf2Image.exe C:\\Users\\Kara\\Desktop\\4L119-796AN.pdf .\\test.jpeg
 ```
 
 This will generate test_01.jpeg, test_02.jpeg files
